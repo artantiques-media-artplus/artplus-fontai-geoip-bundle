@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        public: false
+
+    Fontai\Bundle\GeoipBundle\Service\Geoip:
+        lazy: true
+        arguments:
+            - '%kernel.cache_dir%'
+
+    geoip:
+        alias: Fontai\Bundle\GeoipBundle\Service\Geoip
+        public: true
+
+    Fontai\Bundle\GeoipBundle\Command\UpdateCommand:
+        tags:
+            - { name: console.command, command: geoip:update }
+        arguments:
+            - '@filesystem'
+            - '%kernel.cache_dir%'
+            - '%geoip.license_key%'

@@ -1,0 +1,23 @@
+{
+    "name": "fontai/geoip-bundle",
+    "type": "symfony-bundle",
+    "description": "Fontai GeoipBundle",
+    "authors": [
+        {
+            "name": "Lumír Toman",
+            "email": "toman@websource.cz"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "geoip2/geoip2": "~2.7",
+        "guzzlehttp/guzzle": "~6.3"
+    },
+    "autoload": {
+        "psr-4": { "Fontai\\Bundle\\GeoipBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
